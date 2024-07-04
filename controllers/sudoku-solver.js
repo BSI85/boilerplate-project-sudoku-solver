@@ -145,6 +145,9 @@ class SudokuSolver {
     let num = parseInt(val);
     console.log(typeof num);
     let conflict = [];
+    if (board[row][col] == num) {
+      return { valid: true };
+    }
     if (this.checkRowPlacement(board, row, num) == false) {
       conflict.push("row");
     }
