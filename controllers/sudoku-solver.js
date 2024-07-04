@@ -118,8 +118,6 @@ class SudokuSolver {
   checkRegionPlacement(board, row, col, num) {
     for (let i = 0; i < 9; i++) {
       if (
-        board[row][i] === num ||
-        board[i][col] === num ||
         board[Math.floor(row / 3) * 3 + Math.floor(i / 3)][
           Math.floor(col / 3) * 3 + (i % 3)
         ] === num
@@ -132,7 +130,6 @@ class SudokuSolver {
 
   //Проверяет возможность существования значения по заданным координатам
   checkPlacement(puzzleString, coord, val) {
-    
     if (this.validate(puzzleString) !== true) {
       return this.validate(puzzleString);
     }

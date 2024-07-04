@@ -25,9 +25,9 @@ module.exports = function (app) {
       return res.json({ error: "Required field missing" });
     }
     const solution = solver.solveSudoku(puzzle);
-    /*if (solution.error) {
+    if (solution.error) {
       return res.json(solution);
-    }*/
-    return res.json({ solution });
+    }
+    return res.json({solution});
   });
 };
